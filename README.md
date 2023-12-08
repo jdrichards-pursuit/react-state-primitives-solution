@@ -59,7 +59,7 @@ Your project setup includes a `BookRecommendations` component and a `books.json`
 
 - **Nest child components in `BookRecommendations` components**
 
-  - separate the button list and the recommendations into two components `RecommendationButtons.jsx` and `RecommendationList.jsx`
+  - separate the button list `div` and the recommendations `div` into two components `RecommendationButtons.jsx` and `RecommendationList.jsx`
   - pass the components the correct props so that they function the same way
 
 ### More Challenging Option
