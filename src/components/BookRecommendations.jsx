@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./BookRecommendations.css";
-import bookData from "./books.json"; // Import the data from books.json
+import bookData from "../books.json";
 
 const BookRecommendations = () => {
-  const [allBooks, setAllBooks] = useState(bookData);
+  const [allBooks] = useState(bookData);
   const [selectedGenre, setSelectedGenre] = useState("");
   const [initialRecommendations, setInitialRecommendations] = useState([]);
   const [additionalRecommendations, setAdditionalRecommendations] = useState(
