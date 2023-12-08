@@ -1,25 +1,35 @@
-// BookRecommendationEngine.jsx
 import React, { useState } from "react";
 import "./BookRecommendations.css";
-import bookData from "../books.json";
+import bookData from "../books.json"; // Import the data from books.json
 
 const BookRecommendations = () => {
   // State for all book data
-  const [books, setBooks] = useState(bookData);
+  const [allBooks, setAllBooks] = useState(bookData);
+  const [selectedGenre, setSelectedGenre] = useState("");
+  const [recommendations, setRecommendations] = useState([]);
 
-  // TODO: Implement state for selected genre and recommendations
-
-  // TODO: Implement the handleGenreSelect function
+  const handleGenreSelect = (genre) => {
+    setSelectedGenre(genre);
+    setRecommendations(allBooks[genre] || []);
+  };
 
   return (
-    <div className="book-recommendation-engine">
-      <h2>Book Recommendation Engine</h2>
+    <div className="book-recommendations">
+      <h2>Book Recommendations</h2>
       <div className="genre-buttons">
-        {/* TODO: Map over genres and create buttons */}
+        {Object.keys(allBooks).map((genre) => (
+          <button key={genre} onClick={() => handleGenreSelect(genre)}>
+            {genre}
+          </button>
+        ))}
       </div>
       <div>
-        <h3>Recommendations:</h3>
-        {/* TODO: Display recommendations based on selected genre */}
+        <h3>Recommendations for {selectedGenre}:</h3>
+        <ul className="book-list">
+          {recommendations.map((book, index) => (
+            <li key={index}>{book}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
