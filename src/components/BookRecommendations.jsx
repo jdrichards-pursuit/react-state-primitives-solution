@@ -1,6 +1,11 @@
 import React, { useState } from "react";
-import "./BookRecommendations.css";
+
+import RecommendationButtons from "./RecommendationButtons";
+import RecommendationsList from "./RecommendationsList";
+
 import bookData from "../books.json"; // Import the data from books.json
+
+import "./BookRecommendations.css";
 
 const BookRecommendations = () => {
   // State for all book data
@@ -16,21 +21,14 @@ const BookRecommendations = () => {
   return (
     <div className="book-recommendations">
       <h2>Book Recommendations</h2>
-      <div className="genre-buttons">
-        {Object.keys(allBooks).map((genre) => (
-          <button key={genre} onClick={() => handleGenreSelect(genre)}>
-            {genre}
-          </button>
-        ))}
-      </div>
-      <div>
-        <h3>Recommendations for {selectedGenre}:</h3>
-        <ul className="book-list">
-          {recommendations.map((book, index) => (
-            <li key={index}>{book}</li>
-          ))}
-        </ul>
-      </div>
+      <RecommendationButtons
+        allBooks={allBooks}
+        handleGenreSelect={handleGenreSelect}
+      />
+      <RecommendationsList
+        selectedGenre={selectedGenre}
+        recommendations={recommendations}
+      />
     </div>
   );
 };
