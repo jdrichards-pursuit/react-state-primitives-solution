@@ -30,7 +30,9 @@ const BookRecommendations = () => {
         ))}
       </div>
       <div>
-        <h3>Recommendations for {selectedGenre}:</h3>
+        {initialRecommendations.length > 0 && (
+          <h3>Recommendations for {selectedGenre}:</h3>
+        )}
         <ul className="book-list">
           {initialRecommendations.map((book, index) => (
             <li key={index}>{book}</li>
