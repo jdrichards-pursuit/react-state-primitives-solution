@@ -40,8 +40,9 @@ Your project setup includes a `BookRecommendations` component and a `books.json`
 
 1. **State Setup**:
 
-   - Import the book data from `books.json`.
-   - Set up state in your `BookRecommendations` component to manage the selected genre and the list of book recommendations.
+   - You will be working in the `BookRecommendations` component
+   - The book data has been imported from `books.json`.
+   - The `BookRecommendations` component has been set up to hold and manage the json list of book recommendations.
 
 2. **Create Genre Buttons**:
 
@@ -53,6 +54,15 @@ Your project setup includes a `BookRecommendations` component and a `books.json`
    - Ensure this list updates correctly when a new genre is selected.
 
 ## Bonus Challenge
+
+### Easier Option
+
+- **Nest child components in `BookRecommendations` components**
+
+  - separate the button list and the recommendations into two components `RecommendationButtons.jsx` and `RecommendationList.jsx`
+  - pass the components the correct props so that they function the same way
+
+### More Challenging Option
 
 - **Implement a "More Like This" Feature**:
   - Initially, show only the first two books of the selected genre.
