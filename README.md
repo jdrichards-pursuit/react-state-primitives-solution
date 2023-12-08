@@ -53,6 +53,8 @@ Your project setup includes a `BookRecommendations` component and a `books.json`
    - Display the list of books for the currently selected genre.
    - Ensure this list updates correctly when a new genre is selected.
 
+_\*\*You may want to add more state variables to help #2 and #3 run successfully._
+
 ## Bonus Challenge
 
 ### Easier Option
