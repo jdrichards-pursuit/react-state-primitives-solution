@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to right,
+    #6dd5ed,
+    #2193b0
+  ); /* New gradient background */
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+.book-recommendations {
+  width: 80%; /* Control the width */
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  border-radius: 10px;
+  text-align: center; /* Center text */
+}
+
+.genre-buttons button {
+  background-color: #2193b0; /* Solid color matching the gradient */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.genre-buttons button:hover {
+  background-color: #6dd5ed; /* Lighter color from the gradient */
+}
+
+.book-list {
+  list-style: none; /* Remove list bullet points */
+  padding: 0;
+}
+
+.book-list li {
+  background-color: white;
+  padding: 10px;
+  margin: 10px auto; /* Center the list items */
+  width: 90%; /* Control the width of list items */
+  max-width: 500px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
