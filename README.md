@@ -45,6 +45,7 @@ Your project setup includes a `BookRecommendations` component and a `books.json`
    - You will be working in the `BookRecommendations` component
    - The book data has been imported from `books.json`.
    - The `BookRecommendations` component has been set up to hold and manage the json list of book recommendations.
+   - The CSS has already been created. Do not change the classNames that are associated with the `<div>`s in the `BookRecommendations.jsx` file
 
 2. **Create Genre Buttons**:
 
@@ -55,6 +56,8 @@ Your project setup includes a `BookRecommendations` component and a `books.json`
 
 3. **Display Book Recommendations**:
 
+   - Include and `<h2>` tag which says 'Recommendations for `<the recommendation genre>`.
+   - The genre in the `<h2>` should change dynamically.
    - Display the list of books for the currently selected genre.
    - Ensure this list updates correctly when a new genre is selected.
 
@@ -77,7 +80,28 @@ Your project setup includes a `BookRecommendations` component and a `books.json`
 
 ## Tips
 
+- **Images**: Reference the images below for the look of your app.
 - **State Management**: Think about how to structure your state to manage both the selected genre and the list of recommendations effectively.
 - **Event Handling**: Consider creating separate functions for handling genre selection and the "More Like This" feature. This helps keep your code organized and maintainable.
 - **Key Props in Lists**: Remember to use key props when mapping over arrays in React to prevent rendering issues. The key should be a unique identifier for each element in the array.
 - **Conditional Rendering**: Use conditional rendering to display the "More Like This" button and the additional book recommendations based on the state.
+
+## Core Tasks Images:
+
+### Landing Page:
+
+<img src="./assets/starting-screen.png" width="550" height="400">
+
+### Genre Button Clicked:
+
+<img src="./assets/basic-criteria.png" width="550" height="500">
+
+## More Like This Bonus Images
+
+## Genre Button Clicked:
+
+<img src="./assets/chosen-genre.png" width="550" height="500">
+
+## More Like This Button Clicked
+
+<img src="./assets/more-like-this.png" width="550" height="500">
