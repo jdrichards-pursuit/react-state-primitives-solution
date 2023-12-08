@@ -1,25 +1,56 @@
-// BookRecommendationEngine.jsx
 import React, { useState } from "react";
 import "./BookRecommendations.css";
-import bookData from "../books.json";
+import bookData from "./books.json"; // Import the data from books.json
 
 const BookRecommendations = () => {
-  // State for all book data
-  const [books, setBooks] = useState(bookData);
+  const [allBooks, setAllBooks] = useState(bookData);
+  const [selectedGenre, setSelectedGenre] = useState("");
+  const [initialRecommendations, setInitialRecommendations] = useState([]);
+  const [additionalRecommendations, setAdditionalRecommendations] = useState(
+    []
+  );
+  const [showAdditional, setShowAdditional] = useState(false);
 
-  // TODO: Implement state for selected genre and recommendations
-
-  // TODO: Implement the handleGenreSelect function
+  const handleGenreSelect = (genre) => {
+    setSelectedGenre(genre);
+    const genreBooks = allBooks[genre] || [];
+    setInitialRecommendations(genreBooks.slice(0, 2));
+    setAdditionalRecommendations(genreBooks.slice(2));
+    setShowAdditional(false);
+  };
 
   return (
-    <div className="book-recommendation-engine">
-      <h2>Book Recommendation Engine</h2>
+    <div className="book-recommendations">
+      <h2>Book Recommendations</h2>
       <div className="genre-buttons">
-        {/* TODO: Map over genres and create buttons */}
+        {Object.keys(allBooks).map((genre) => (
+          <button key={genre} onClick={() => handleGenreSelect(genre)}>
+            {genre}
+          </button>
+        ))}
       </div>
       <div>
-        <h3>Recommendations:</h3>
-        {/* TODO: Display recommendations based on selected genre */}
+        <h3>Recommendations for {selectedGenre}:</h3>
+        <ul className="book-list">
+          {initialRecommendations.map((book, index) => (
+            <li key={index}>{book}</li>
+          ))}
+        </ul>
+        {additionalRecommendations.length > 0 && !showAdditional && (
+          <button
+            className="more-like-this-button"
+            onClick={() => setShowAdditional(true)}
+          >
+            More Like This
+          </button>
+        )}
+        {showAdditional && (
+          <ul className="book-list">
+            {additionalRecommendations.map((book, index) => (
+              <li key={index}>{book}</li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
